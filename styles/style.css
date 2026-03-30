@@ -1,3 +1,9 @@
 body {
   background-color: rgb(255, 255, 255);
 }
+body {
+  font-family: 'Google Sans', Arial, sans-serif;
+  font-size: 17px;
+  color: black;
+  line-height: auto;
+}

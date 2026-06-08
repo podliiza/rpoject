@@ -21,15 +21,6 @@ if (signupBtn) {
     });
 }
 
-// Открыть окно при клике на Login
-if (loginBtn) {
-    loginBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        modal.style.display = 'block';
-        setActiveTab('login');
-    });
-}
-
 // Закрыть окно при клике на фон
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
@@ -37,20 +28,6 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// ========== ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК ==========
-function setActiveTab(tab) {
-    if (tab === 'login') {
-        tabBtns[0].classList.add('active');
-        tabBtns[1].classList.remove('active');
-        loginForm.classList.add('active-form');
-        signupForm.classList.remove('active-form');
-    } else {
-        tabBtns[0].classList.remove('active');
-        tabBtns[1].classList.add('active');
-        loginForm.classList.remove('active-form');
-        signupForm.classList.add('active-form');
-    }
-}
 
 tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {

@@ -11,6 +11,8 @@ const loginForm = document.getElementById('loginForm');
 const signupForm = document.getElementById('signupForm');
 const switchToSignup = document.getElementById('switchToSignup');
 const switchToLogin = document.getElementById('switchToLogin');
+let hamburger = document.querySelector('.hamburger');
+let nav = document.querySelector('.nav');
 
 // Открыть окно при клике на Sign Up
 if (signupBtn) {
@@ -43,3 +45,14 @@ if (switchToSignup) {
 if (switchToLogin) {
     switchToLogin.addEventListener('click', () => setActiveTab('login'));
 }
+
+hamburger.addEventListener('click', function(e) {
+  e.stopPropagation();
+  nav.classList.toggle('active');
+});
+
+document.addEventListener('click', function(e) {
+  if (!nav.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
